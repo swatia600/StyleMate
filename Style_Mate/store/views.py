@@ -8,6 +8,11 @@ from .models import Product
 from django.views.decorators.csrf import csrf_exempt
 from dialogflow_fulfillment import WebhookClient
 import json
+from pathlib import Path
+import os
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent
+
 @csrf_exempt
 def dialogflow_webhook(request):
     if request.method == 'POST':
@@ -69,7 +74,7 @@ def search(request):
 def get_dict_from_data():
     import csv
     # Define the filename of the CSV file
-    filename = '/Users/swatiarora/Documents/ISR/Style_Mate/Style_Mate/store/data.csv'
+    filename = BASE_DIR / "data.csv"
 
     # Define the header row as a list
     header = []

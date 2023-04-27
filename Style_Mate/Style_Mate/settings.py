@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -25,13 +24,13 @@ SECRET_KEY = "django-insecure-rmb!x(b!yl+sl&&jy$rnr8-87i)1!vkz75xfw^k^uv7n*ojglq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','4d39-50-30-192-26.ngrok-free.app', '.*\.ngrok\.io','*.ngrok.io','*.ngrok-free.app','82be-50-30-192-31.ngrok-free.app']
+ALLOWED_HOSTS = ['*']
 SECURE_SSL_REDIRECT = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # SSL/TLS settings
-SECURE_SSL_CERTIFICATE = '/Users/swatiarora/Documents/ISR/Style_Mate/Style_Mate/localhost.crt'
-SECURE_SSL_KEY = '/Users/swatiarora/Documents/ISR/Style_Mate/Style_Mate/localhost.key'
+SECURE_SSL_CERTIFICATE = BASE_DIR /"localhost.crt"
+SECURE_SSL_KEY = BASE_DIR /"localhost.key"
 
 # Application definition
 

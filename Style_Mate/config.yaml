@@ -1,0 +1,4 @@
+METADATA_FILE : 'Project_Data/Metadata.csv'
+EMBEDDING_FILE : 'Output/embeddings.pickle'
+SECURE_SSL_CERTIFICATE : '/Users/swatiarora/Documents/ISR/Style_Mate/Style_Mate/localhost.crt'
+SECURE_SSL_KEY : '/Users/swatiarora/Documents/ISR/Style_Mate/Style_Mate/localhost.key'
