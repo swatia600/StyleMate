@@ -1,0 +1,12 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+            {% include 'store/search_bar.html' %}
+        </div>
+        <div class="col-md-8">
+            {% include 'store/product_recommendations.html' %}
+        </div>
+    </div>
+{% endblock content%}

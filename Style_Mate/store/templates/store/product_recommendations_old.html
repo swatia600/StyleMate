@@ -1,0 +1,125 @@
+{% extends 'store/base.html' %}
+<style>
+    /* CSS code for search box */
+    .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background-color: #f8f8f8;
+  padding: 20px 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+.search-box {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.search-box input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-box button {
+  padding: 10px 20px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+}
+
+.product {
+  display: flex;
+  margin: 20px 0;
+}
+
+.product-images {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-images img {
+  max-width: 100%;
+}
+
+.product-details {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.product-details h2 {
+  margin-top: 0;
+}
+
+.product-details .description {
+  margin-top: 10px;
+}
+
+.product-details .price {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-btn.prev {
+  left: 20px;
+}
+
+.slider-btn.next {
+  right: 20px
+}
+  </style>
+{% block content %}
+    <h1>Product Recommendations</h1>
+    <ul>
+        <div class="container">
+            <div class="product">
+                {% for product_id, details in data.items %}
+                    <div class="product-images">
+                       {% for image_url in details.image %}
+                            <img src="{{ image_url }}" alt="{{ details.title }}" class="product-image">
+                        {% endfor %}
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-name">{{ details.title }}</h3>
+                        <p class="description">{{ details.description }}</p>
+                        <p class="description">{{ details.brand }}</p>
+                        <p class="price">$ {{ details.price }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>    
+    </ul>
+{% endblock content%}
